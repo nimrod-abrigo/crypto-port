@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('crypto-port App', () => {
+describe('practice-app App', () => {
   let page: AppPage;
 
   beforeEach(() => {

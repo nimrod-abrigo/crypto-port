@@ -1,0 +1,26 @@
+<h1>User Component</h1> 
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUser">
+    <i class="glyphicon glyphicon-plus"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add New User</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-user-new (createNewUserEvent)="create($event)"></app-user-new>
+            </div>
+        </div>
+    </div>
+</div>
+<app-user-list [users]="users" (destroyUserEvent)="destroy($event)" (updateUserEvent)="update($event)"></app-user-list>
+
+<script>
+    
+</script>

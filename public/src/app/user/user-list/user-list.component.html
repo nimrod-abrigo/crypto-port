@@ -1,0 +1,24 @@
+<h3>UserList</h3>
+    <div *ngFor="let user of users">
+      <app-user-edit [user]="user" (updateUserEvent)="update($event)" *ngIf="user.editable"></app-user-edit>
+    </div> 
+
+  <table class="table table-hover">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user._id}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="destroy(user)">Delete</button><br>
+        <button class="btn btn-primary" (click)="user.editable = !user.editable" >Edit</button>
+      </td>
+    </tr>
+  </table>
